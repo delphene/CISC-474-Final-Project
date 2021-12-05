@@ -26,14 +26,14 @@
 [players](#players_p)<br>
 ##### Methods 
 ---
-[train](#board_h)<br>
-[best_action](#board_h)<br>
-[choose_action](#board_h)<br>
-[add_state](#board_h)<br>
-[qlearning](#board_h)<br>
-[sarsa](#board_h)<br>
-[play_o](#board_h)<br>
-[play_x](#board_h)<br>
+[train](#train_m)<br>
+[best_action](#best_action_m)<br>
+[choose_action](#choose_action_m)<br>
+[add_state](#add_state_m)<br>
+[qlearning](#qlearning_m)<br>
+[sarsa](#sarsa_m)<br>
+[play_o](#play_o_m)<br>
+[play_x](#play_x_m)<br>
 ### Variables
 ---
 | Variable | Description | Representation |
@@ -70,7 +70,7 @@
 | Method     | Description | Parameters | Function |
 |---         |---          |---         |---       |
 | \_\_init\_\_    | initialization | self<br>epsilon<br>discount<br>alpha<br>algorithm="qlearning" | set attributes to parameters<br>initialize:<br>State = Board()<br>q = empty dictionary<br>states = empty set<br>add initial state from State using add\_state |
-| <a name="train_m">train<a>         | call training function based on algorithm (attribute) | self, num_episodes | check algorithm (attribute)<br>if algorithm is "qlearning" call function qlearning<br>if not, call function sarsa |
+| <a name="train_m">train<a>         | call training function based on algorithm (attribute) | self<br>num_episodes | check algorithm (attribute)<br>if algorithm is "qlearning" call function qlearning<br>if not, call function sarsa |
 | <a name="best_action_m">best_action<a>   | return a choice of best action for current state | self<br>player | check [player](#player_l) boolean, if true [player](#player_v) is x<br>find max value for all actions at current state, append each [action](#action_v) that is equal to that value and return a choice from those actions<br>if false [player](#player_v) is o<br>find min value for all actions at current state, append each [action](#action_v) that is equal to that value and return a choice from those actions |
 | <a name="choose_action_m">choose\_action<a> | choose action based on epsilon-greedy | self<br>player | generate random float between 0 and 1<br>if the value is greater than [epsilon](#epsilon_p) return [best\_action](#best_action_m)<br>if the value is less than epsilon return random choice from [open](#open_p) positions on grid |
 | <a name="add_state_m">add_state<a>     | add new state to states and q-table | self<br>state<br>open | add state to set [states](#states_p)<br>create new dictionary for [q](#q_p) with key=state<br>for each position in [open](#open_p) add dictionary at key=state with key=open ([action](#action_v)) and value 0.0 |
