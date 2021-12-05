@@ -1,20 +1,20 @@
 ## IMPLEMENTATION
 
-#### OVERVIEW
-##### Implementation of environment class [Board](#board_h)
-###### Attributes
+### OVERVIEW
+#### Implementation of environment class [Board](#board_h)
+##### Attributes
 ---
 [state](#state_p)<br>
 [winner](#winner_p)<br>
 [open](#open_p)<br>
 [reward](#reward_p)<br>
-###### Methods
+##### Methods
 ---
 [check_end](#check_end_m)<br>
 [play](#play_m)<br>
 [display](#display_m)<br>
-##### Implementation of agent class [Agent](#agent_h)
-###### Attributes
+#### Implementation of agent class [Agent](#agent_h)
+##### Attributes
 ---
 [epsilon](#epsilon_p)<br>
 [discount](#discount_p)<br>
@@ -24,7 +24,7 @@
 [q](#q_p)<br>
 [states](#states_p)<br>
 [players](#players_p)<br>
-###### Methods 
+##### Methods 
 ---
 [train](#board_h)<br>
 [best_action](#board_h)<br>
@@ -34,7 +34,7 @@
 [sarsa](#board_h)<br>
 [play_o](#board_h)<br>
 [play_x](#board_h)<br>
-#### <a name="board_h">Board<a>
+### <a name="board_h">Board<a>
 | Attribute | Description | Representation |
 |---        |---          |---             |
 | <a name="state_p">state<a> | current state of a game | 9 char string where "1"=x "2"=o "0"=empty<br />eg. board "120021102" represents board:<br /><pre>         x \| o \|<br />        -----------<br />           \| o \| x<br />        -----------<br />         x \|   \| o</pre>
@@ -48,7 +48,7 @@
 | <a name="check_end_m">check_end<a>  | checks after each action to see if the winner has changed | self, player, action | checks all winning combinations for action (eg. if action is 0 check top row, left column, -1 diagonal)<br />if there is no winner and there are no more open spaces then game is tie <br />if x or o has won set reward |
 | <a name="play_m">play<a>       | takes action on board | self, action, player | insert player char at action index of state<br />remove the action index from open<br />call check_end for action and player |
 | <a name="display_m">display<a>    | print board to console | self | for each index is state, convert "0" to "_", "1" to "X", "2" to "O"<br />print board in 3x3 grid with corresponding index to the left as "{index}:" |
-#### <a name="agent_h">Agent<a>
+### <a name="agent_h">Agent<a>
 | Attribute | Description | Representation |
 |---        |---          |---             |
 | <a name="epsilon_p">epsilon<a> | epsilon-greedy value<br />% of the time to choose non-greedy action | float |
