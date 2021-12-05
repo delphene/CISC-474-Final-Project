@@ -63,7 +63,7 @@ play_x
 | algorithm | which algorithm the agent will use | string of "qlearning" or "sarsa" |
 | State | holds the current state/board | instance of class Board |
 | q | Q table values | dictionary of {state: {action: value}, ...}<br />accessed as q\[state][action] |
-| states | all visited states | set of states |
+| <a name="states_p">states<a> | all visited states | set of states |
 | players | used to determine which player is choosing actions and get their corresponding char ("1" or "2") | dictionary of {True:"1",False:"2"}<br />such that turns can be alternated by flipping a boolean |
 
 | Method     | Description | Parameters | Function |
@@ -73,7 +73,7 @@ play_x
 | best_action   | return a choice of best action for current state | self, player | check player boolean, if true player is x<br />find max value for all actions at current state, append each action that is equal to that value and return a choice from those actions<br />if false player is o<br />find min value for all actions at current state, append each action that is equal to that value and return a choice from those actions |
 | choose\_action | choose action based on epsilon-greedy | self, player | generate random float between 0 and 1<br />if the value is greater than epsilon return best\_action<br />if the value is less than epsilon return random choice from open positions on grid |
 | add_state     | add new state to states and q-table | self, state, open | add state to set states<br />create new dictionary for q with key=state<br />for each position in open add dictionary at key=state with key=open (action) and value 0.0 |
-| qlearning     | call qlearning algorithm | self, num_episodes | for each episode initialize State to default Board value and set player to True (X)<br />while the State has no winner<br />save a copy of the current state<br />choose an action for the current player, take that action on the board and swap the current player to the other player<br />if the new state after the action has not been seen add it to [states](#states) |
+| qlearning     | call qlearning algorithm | self, num_episodes | for each episode initialize State to default Board value and set player to True (X)<br />while the State has no winner<br />save a copy of the current state<br />choose an action for the current player, take that action on the board and swap the current player to the other player<br />if the new state after the action has not been seen add it to [states](#states_p) |
 | sarsa         | call sarsa algorithm | self, num_episodes |  |
 | play\_o        | play a game as o against the agent | self, num\_games |  |
 | play\_x        | play a game as x against the agent | self, num\_games |  |
