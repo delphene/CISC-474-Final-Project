@@ -69,7 +69,7 @@
 
 | Method     | Description | Parameters | Function |
 |---         |---          |---         |---       |
-| \_\_init\_\_    | initialization | self, epsilon, discount, alpha, algorithm="qlearning" | set attributes to parameters<br>initialize:<br>State = Board()<br>q = empty dictionary<br>states = empty set<br>add initial state from State using add\_state |
+| \_\_init\_\_    | initialization | self<br>epsilon<br>discount<br>alpha<br>algorithm="qlearning" | set attributes to parameters<br>initialize:<br>State = Board()<br>q = empty dictionary<br>states = empty set<br>add initial state from State using add\_state |
 | <a name="train_m">train<a>         | call training function based on algorithm (attribute) | self, num_episodes | check algorithm (attribute)<br>if algorithm is "qlearning" call function qlearning<br>if not, call function sarsa |
 | <a name="best_action_m">best_action<a>   | return a choice of best action for current state | self, player | check [player](#player_l) boolean, if true [player](#player_v) is x<br>find max value for all actions at current state, append each [action](#action_v) that is equal to that value and return a choice from those actions<br>if false [player](#player_v) is o<br>find min value for all actions at current state, append each [action](#action_v) that is equal to that value and return a choice from those actions |
 | <a name="choose_action_m">choose\_action<a> | choose action based on epsilon-greedy | self, player | generate random float between 0 and 1<br>if the value is greater than [epsilon](#epsilon_p) return [best\_action](#best_action_m)<br>if the value is less than epsilon return random choice from [open](#open_p) positions on grid |
