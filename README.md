@@ -1,8 +1,8 @@
 ## Contributors 
-Brian Herman
-Makan Sabeti
-Matthew Rezkalla
-Baadshah Verma
+Brian Herman<br>
+Makan Sabeti<br>
+Matthew Rezkalla<br>
+Baadshah Verma<br>
 
 ## IMPLEMENTATION
 
