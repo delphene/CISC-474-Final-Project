@@ -2,7 +2,7 @@
 Brian Herman - [delphene](https://github.com/delphene)<br>
 Makan Sabeti - [MakanSabeti](https://github.com/MakanSabeti)<br>
 Matthew Rezkalla - [Rxzkalla](https://github.com/rxzkalla)<br>
-Baadshah Verma - [baadshahverma](https://github.com/baadshahverma)br>
+Baadshah Verma - [baadshahverma](https://github.com/baadshahverma)
 
 ## IMPLEMENTATION
 
