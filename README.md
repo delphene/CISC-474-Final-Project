@@ -1,3 +1,9 @@
+## Contributors 
+Brian Herman
+Makan Sabeti
+Matthew Rezkalla
+Baadshah Verma
+
 ## IMPLEMENTATION
 
 ### OVERVIEW
